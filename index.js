@@ -10,15 +10,14 @@ const server = http.createServer(app);
 const io = socketIO(server);
 const port = process.env.PORT;
 
-
-
 app.use("/", express.static(path.join(__dirname, "public")));
 
 io.on("connection", (socket) => {
   console.log("a user connected");
-  setInterval(() => {
-    socket.emit("from_server");
-  }, 2000);
+
+  socket.on("msg_send", ({msg}) => {
+    io.emit("msg_received", {msg: msg});
+  });
 });
 
 server.listen(port, () => {

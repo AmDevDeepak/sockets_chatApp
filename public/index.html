@@ -6,8 +6,15 @@
         <title>My Chat App</title>
     </head>
     <body>
-        <h1>My Chat App</h1>
-        <button id="btn">Click Me</button>
+        <div class="main">
+            <h1>My Chat App</h1>
+            <div class="chatBox">
+                <input type="text" id="newMsg">
+                <button id="send-btn">Send</button>
+
+                <ul id="msgList"></ul>
+            </div>
+        </div>
         <script src="/socket.io/socket.io.js"></script>
         <script src="script.js"></script>
     </body>
