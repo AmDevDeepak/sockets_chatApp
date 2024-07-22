@@ -4,17 +4,42 @@
         <meta charset="UTF-8">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <title>My Chat App</title>
+        <link
+            href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0/dist/css/bootstrap.min.css"
+            rel="stylesheet">
+        <style>
+            .card {
+                padding: 20px;
+            }
+            .list-group-item {
+                padding: 10px;
+            }
+            .container{
+                padding-top: 5rem;
+            }
+        </style>
     </head>
     <body>
-        <div class="main">
-            <h1>My Chat App</h1>
-            <div class="chatBox">
-                <input type="text" id="newMsg">
-                <button id="send-btn">Send</button>
-
-                <ul id="msgList"></ul>
+        <div class="container">
+            <div class="row justify-content-center">
+                <div class="col-md-4">
+                    <div class="card">
+                        <div class="card-header fs-3 text">My Chat App</div>
+                        <div class="card-body">
+                            <ul id="msgList" class="list-group"></ul>
+                            <div class="input-group mt-3">
+                                <input type="text" id="newMsg"
+                                    class="form-control" placeholder="Type a message...">
+                                <button id="send-btn"
+                                    class="btn btn-outline-success">Send</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
             </div>
         </div>
+        <script
+            src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0/dist/js/bootstrap.bundle.min.js"></script>
         <script src="/socket.io/socket.io.js"></script>
         <script src="script.js"></script>
     </body>
