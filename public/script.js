@@ -10,8 +10,8 @@ sendBtn.onclick = () => {
   inputMsg.value = "";
 }
 
-socket.on('msg_received', ({msg}) => {
+socket.on('msg_received', (data) => {
   let liMsg = document.createElement("li");
-  liMsg.innerText = `${msg}`;
+  liMsg.innerText = data.mgs;
   msgList.appendChild(liMsg);
 })
